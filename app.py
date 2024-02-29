@@ -143,6 +143,7 @@ def predict():
         get_string = request.form["english_string"]
         prepross = preprocess_text(get_string)
         clean = handle_key_error(prepross,input_lang)
+        #prepross = preprocess_text(clean)
         output_words, decoder_attn = evaluate(encoder, decoder,clean)
         output_sentence = ' '.join(output_words)
      
